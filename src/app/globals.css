@@ -18,4 +18,9 @@
 body {
   font-family: "Nikukyu", sans-serif;
   letter-spacing: 2px;
+  background-image: url("/images/topo-bg.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; /* or contain, depending on your design needs */
 }

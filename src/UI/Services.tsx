@@ -38,7 +38,7 @@ export default function Services() {
       <div className="flex flex-col md:flex-row gap-4">
         {services.map((service, index) => (
           <div key={index}>
-            <Card>
+            <Card className="min-h-56">
               <CardHeader>
                 {service.icon}
                 <CardTitle className="font-nicoMoji text-xl tracking-wider">

@@ -10,19 +10,18 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-export default function Projects() {
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+export default function Testinomials() {
   const services = [
     {
-      image: Topogoly,
-      title: "TBD",
+      title: "Darlington Bright",
       description:
-        "A service uses QR codes to provide customers with a seamless way to view available times and book appointments. The service is built with Node.js, integrates with Google Calendar API, and provides secure authentication using OAuth2.",
+        "Robinson March exceeded our expectations with their innovative software solutions. Their professional approach and reliable service have been instrumental in our success.",
     },
     {
-      image: kae,
-      title: "Kalance",
+      title: "Laura White",
       description:
-        "Kaelance is an innovative social finance platform designed to help users achieve their financial goals through collective effort and group savings.",
+        "Robinson March's custom software development transformed our operations. Their capable team delivered a solution that not only met but exceeded our requirements.",
     },
     {
       image: tangles,
@@ -32,18 +31,26 @@ export default function Projects() {
     },
   ];
   return (
-    <div className="space-y-6 ">
-      <p className="font-nicoMoji text-xl">Projects</p>
+    <div className="space-y-6 bg-zinc-200 h-fit p-5">
+      <p className="font-nicoMoji text-xl ">Testinomials</p>
       <div className=" grid gap-4 grid-cols-1 grid-rows-1 md:grid-cols-3 gap-4 ">
         {services.map((service, index) => (
           <div key={index}>
             <Card className="bg-gradient-to-r from-gray-50  to-gray-100  min-h-72">
               <CardHeader>
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  className="w-1/6 rounded-full"
-                />
+                {service.image ? (
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    className="w-1/6 rounded-full"
+                  />
+                ) : (
+                  <Avatar>
+                    <AvatarFallback>
+                      {service.title.split("")[0]}
+                    </AvatarFallback>
+                  </Avatar>
+                )}
                 <CardTitle className="font-nicoMoji text-xl tracking-wider">
                   {service.title}
                 </CardTitle>

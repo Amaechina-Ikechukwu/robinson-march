@@ -1,5 +1,5 @@
 import React from "react";
-import Diamond from "./Diamond";
+import Diamond from "../constants/Diamond";
 import girltech from "../../public/images/girltech.jpg";
 import space from "../../public/images/space.jpg";
 import thinktank from "../../public/images/thinktank.jpg";
@@ -55,22 +55,27 @@ function Reason() {
           </div>
         ))}
       </div>
-      <div className="flex flex-col md:flex-row gap-4 shadow-2xl bg-black p-10 ">
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className="relative md:w-4/12 h-[500px] bg-neutral-900 rounded-tl-lg rounded-br-lg border border-gray-200 "
-          >
-            <Image
-              src={img.image}
-              width={500}
-              height={500}
-              alt={img.alt}
-              className=" grayscale object-cover object-center h-full  hover:object-contain hover:h-auto "
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black "></div>
-          </div>
-        ))}
+      <div className=" gap-4 shadow-2xl bg-black p-10 ">
+        <h3 className="text-2xl font-medium font-nicoMoji text-zinc-200">
+          Peak Innovation
+        </h3>
+        <div className="flex flex-col md:flex-row gap-4  ">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className="relative md:w-4/12 h-[500px] bg-neutral-900 rounded-tl-lg rounded-br-lg border border-gray-200 "
+            >
+              <Image
+                src={img.image}
+                width={500}
+                height={500}
+                alt={img.alt}
+                className=" grayscale object-cover object-center h-full  hover:object-contain hover:h-auto "
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black "></div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
