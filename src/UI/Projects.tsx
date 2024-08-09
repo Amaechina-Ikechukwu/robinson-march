@@ -35,8 +35,8 @@ export default function Projects() {
     <div className="space-y-6 ">
       <p className="font-nicoMoji text-xl">Projects</p>
       <div className=" grid gap-4 grid-cols-3 grid-rows-3 gap-4 max-h-[200px]">
-        {services.map((service) => (
-          <div>
+        {services.map((service, index) => (
+          <div key={index}>
             <Card className="bg-gradient-to-r from-gray-50  to-gray-100 max-w-max max-h-max">
               <CardHeader>
                 <Image

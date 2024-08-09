@@ -36,8 +36,8 @@ export default function Services() {
     <div className="space-y-6 shadow-2xl bg-transparent p-5">
       <p className="font-nicoMoji text-xl">Services</p>
       <div className="flex flex-col md:flex-row gap-4">
-        {services.map((service) => (
-          <div>
+        {services.map((service, index) => (
+          <div key={index}>
             <Card>
               <CardHeader>
                 {service.icon}
