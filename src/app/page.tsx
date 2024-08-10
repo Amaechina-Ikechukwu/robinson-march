@@ -27,11 +27,11 @@ export default function Home() {
           </Button>
         </div>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert animate-spinSlow w-full md:w-2/4"
+          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert animate-spinSlow w-96 md:w-2/4"
           src={Topology}
           alt="Robinson March Logo"
-          width={500}
-          height={500}
+          width={600}
+          height={600}
           priority
         />
       </div>

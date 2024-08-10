@@ -13,7 +13,7 @@ const FadeInSection = ({ children }: { children: any }) => {
           observer.disconnect(); // Disconnect observer once the element is in view
         }
       },
-      { threshold: 0.35 } // Trigger when 10% of the element is in view
+      { threshold: 0.2 } // Trigger when 20% of the element is in view
     );
 
     if (sectionRef.current) {
