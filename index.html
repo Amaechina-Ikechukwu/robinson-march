@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinson March</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              nicoMoji: ['"Nico Moji"', 'sans-serif'],
+              nikukyu: ['Nikukyu', 'sans-serif'],
+            },
+            animation: {
+              slideUp: 'slideUp 0.5s ease-out forwards',
+              spinSlow: 'spin 10s linear infinite',
+            },
+            keyframes: {
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+        @font-face {
+            font-family: "Nico Moji";
+            src: url("./public/NicoMoji-Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Nikukyu";
+            src: url("./public/Nikukyu-Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Nikukyu", sans-serif;
+            letter-spacing: 2px;
+            /* Global Parallax Background */
+            background-image: url("./public/images/topo-bg.svg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="container mx-auto py-5 text-gray-900 bg-gray-50/80">
+
+    <!-- NAVIGATION -->
+    <nav class="flex flex-row justify-between items-center container mx-auto px-4 py-4">
+        <h3 class="text-lg font-bold font-nicoMoji">Robinson March</h3>
+        
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-900 hover:bg-gray-100 rounded transition-colors">
+            <i data-lucide="menu"></i>
+        </button>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-6" id="desktop-menu">
+            <a href="#projects" class="text-sm font-medium hover:text-gray-600 transition-colors">Projects</a>
+            <a href="#services" class="text-sm font-medium hover:text-gray-600 transition-colors">Services</a>
+            <a href="#testimonials" class="text-sm font-medium hover:text-gray-600 transition-colors">Testimonials</a>
+            <a href="#contact" class="bg-black text-white px-4 py-2 text-sm font-medium hover:invert transition-all">Contact Us</a>
+        </div>
+    </nav>
+    
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden flex-col bg-white shadow-lg p-4 space-y-4 mx-4 md:hidden absolute w-11/12 z-50 rounded-lg border border-gray-100">
+        <a href="#projects" class="text-sm font-medium block border-b pb-2">Projects</a>
+        <a href="#services" class="text-sm font-medium block border-b pb-2">Services</a>
+        <a href="#testimonials" class="text-sm font-medium block border-b pb-2">Testimonials</a>
+        <a href="#contact" class="bg-black text-white px-4 py-2 text-sm font-medium text-center block mt-2">Contact Us</a>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex min-h-screen flex-col items-center justify-between py-24 w-full space-y-20 md:space-y-40 px-4">
+        
+        <!-- HERO SECTION -->
+        <div class="flex md:flex-row animate-slideUp flex-col justify-between md:items-center items-start z-20 mb-20 md:mb-0 w-full gap-10">
+            <div class="space-y-5 md:w-1/2">
+                <h1 class="font-nicoMoji text-3xl md:text-5xl lg:text-6xl max-w-2xl leading-tight">Apt. Professional. Capable.</h1>
+                <h3 class="text-xl font-medium max-w-xl text-gray-700">We have the capacity to handle your enterprise software needs.</h3>
+                <button class="bg-black text-white px-8 py-3 rounded-none hover:invert transition-all font-medium tracking-wide">Contact Robinson March Today</button>
+            </div>
+            <div class="md:w-1/2 w-full mt-10 md:mt-0">
+                <img class="w-full rounded-2xl shadow-2xl object-cover h-[400px]" 
+                     src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop" alt="Modern Software Workspace" />
+            </div>
+        </div>
+
+        <!-- INTRO SECTION (with parallax effect on arm.jpg) -->
+        <div class="w-full items-start flex flex-col md:flex-row justify-between gap-10">
+            <div class="space-y-6 md:w-2/3">
+                <p class="leading-loose font-bold font-nicoMoji text-2xl md:text-3xl text-gray-900">At Robinson March,</p>
+                <p class="leading-loose font-bold text-gray-700 text-lg md:text-xl">We understand that your enterprise software needs are as unique as your business. With our robust capabilities and expertise, we provide tailored solutions designed to enhance your operational efficiency and drive growth.</p>
+            </div>
+            <!-- Parallax Image Block -->
+            <div class="w-full md:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-xl relative">
+                <div class="absolute inset-0 bg-fixed bg-center bg-cover grayscale hover:grayscale-0 transition-all duration-700" style="background-image: url('./public/images/arm.jpg');"></div>
+                <!-- Optional subtle overlay for contrast -->
+                <div class="absolute inset-0 bg-black/10"></div>
+            </div>
+        </div>
+
+        <!-- REASON SECTION -->
+        <div class="space-y-16 w-full">
+            <div class="space-y-8">
+                <p class="leading-loose font-bold font-nicoMoji text-3xl md:text-4xl text-gray-900">Why Robinson March?</p>
+                
+                <!-- Reason Items -->
+                <div class="space-y-8 max-w-4xl">
+                    <!-- Reason 1 -->
+                    <div class="flex space-x-6 items-start">
+                        <div class="w-4 h-4 bg-black transform rotate-45 mt-2 flex-shrink-0"></div>
+                        <div>
+                            <h6 class="font-nicoMoji font-bold text-xl mb-2">Aptitude For Innovation</h6>
+                            <p class="md:w-3/4 text-gray-700 text-lg">Our team of seasoned professionals stays ahead of industry trends, ensuring that your software solutions are not only up-to-date but also cutting-edge.</p>
+                        </div>
+                    </div>
+                    <!-- Reason 2 -->
+                    <div class="flex space-x-6 items-start">
+                        <div class="w-4 h-4 bg-black transform rotate-45 mt-2 flex-shrink-0"></div>
+                        <div>
+                            <h6 class="font-nicoMoji font-bold text-xl mb-2">Professional Excellence</h6>
+                            <p class="md:w-3/4 text-gray-700 text-lg">We pride ourselves on our commitment to delivering excellence in every project. From initial consultation to deployment and support, our focus is on providing superior service and results.</p>
+                        </div>
+                    </div>
+                    <!-- Reason 3 -->
+                    <div class="flex space-x-6 items-start">
+                        <div class="w-4 h-4 bg-black transform rotate-45 mt-2 flex-shrink-0"></div>
+                        <div>
+                            <h6 class="font-nicoMoji font-bold text-xl mb-2">Capable and Reliable</h6>
+                            <p class="md:w-3/4 text-gray-700 text-lg">With a proven track record of success, Robinson March is equipped to handle your most complex enterprise software challenges. Our scalable solutions are designed to grow with your business, providing flexibility and reliability every step of the way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peak Innovation Images (Parallax blocks) -->
+            <div class="gap-4 shadow-2xl bg-black p-8 md:p-12 rounded-xl">
+                <h3 class="text-3xl md:text-4xl font-medium font-nicoMoji text-zinc-200 mb-10 text-center md:text-left">Peak Innovation</h3>
+                <div class="flex flex-col md:flex-row gap-6 h-auto md:h-[500px]">
+                    <!-- Parallax Image 1 -->
+                    <div class="relative w-full md:w-1/3 h-[300px] md:h-full bg-neutral-900 rounded-tl-2xl rounded-br-2xl border border-gray-800 overflow-hidden group shadow-lg">
+                        <div class="absolute inset-0 bg-fixed bg-center bg-cover grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url('./public/images/girltech.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    </div>
+                    <!-- Parallax Image 2 -->
+                    <div class="relative w-full md:w-1/3 h-[300px] md:h-full bg-neutral-900 rounded-tl-2xl rounded-br-2xl border border-gray-800 overflow-hidden group shadow-lg">
+                        <div class="absolute inset-0 bg-fixed bg-center bg-cover grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url('./public/images/space.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    </div>
+                    <!-- Parallax Image 3 -->
+                    <div class="relative w-full md:w-1/3 h-[300px] md:h-full bg-neutral-900 rounded-tl-2xl rounded-br-2xl border border-gray-800 overflow-hidden group shadow-lg">
+                        <div class="absolute inset-0 bg-fixed bg-center bg-cover grayscale group-hover:grayscale-0 transition-all duration-700" style="background-image: url('./public/images/thinktank.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICES SECTION -->
+        <div id="services" class="space-y-8 shadow-2xl bg-white/70 backdrop-blur-md p-8 md:p-12 rounded-2xl w-full border border-gray-100">
+            <p class="font-nicoMoji text-3xl md:text-4xl text-gray-900">Services</p>
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Service 1 -->
+                <div class="flex-1 bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="webhook" class="w-8 h-8 text-gray-900"></i>
+                    </div>
+                    <h3 class="font-nicoMoji text-xl tracking-wider mb-4 text-gray-900">Website (Seo Optimized)</h3>
+                    <p class="text-gray-600 leading-relaxed">Enhance your online visibility with our expertly crafted websites, designed to rank higher in search engines and attract more visitors.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="flex-1 bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="layout-panel-left" class="w-8 h-8 text-gray-900"></i>
+                    </div>
+                    <h3 class="font-nicoMoji text-xl tracking-wider mb-4 text-gray-900">Cross Platform Apps</h3>
+                    <p class="text-gray-600 leading-relaxed">Reach a wider audience with our seamless, high-performance apps that run flawlessly on multiple devices and operating systems.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="flex-1 bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="scale-3d" class="w-8 h-8 text-gray-900"></i>
+                    </div>
+                    <h3 class="font-nicoMoji text-xl tracking-wider mb-4 text-gray-900">Scalable Serveless Services</h3>
+                    <p class="text-gray-600 leading-relaxed">Ensure your digital infrastructure can handle increased demand with our scalable, serverless backend solutions that offer flexibility and reliability.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTS SECTION -->
+        <div id="projects" class="space-y-8 w-full">
+            <p class="font-nicoMoji text-3xl md:text-4xl text-gray-900">Projects</p>
+            <div class="grid gap-8 grid-cols-1 md:grid-cols-3">
+                <!-- Project 1 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all min-h-[20rem]">
+                    <img src="./public/images/Topology-1.png" alt="TBD" class="w-20 h-20 rounded-full mb-6 object-cover border-4 border-white shadow-sm" />
+                    <h3 class="font-nicoMoji text-2xl tracking-wider mb-4 text-gray-900">TBD</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">A service uses QR codes to provide customers with a seamless way to view available times and book appointments. The service is built with Node.js, integrates with Google Calendar API, and provides secure authentication using OAuth2.</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all min-h-[20rem]">
+                    <img src="./public/images/kae.png" alt="Kalance" class="w-20 h-20 rounded-full mb-6 object-cover border-4 border-white shadow-sm" />
+                    <h3 class="font-nicoMoji text-2xl tracking-wider mb-4 text-gray-900">Kalance</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Kaelance is an innovative social finance platform designed to help users achieve their financial goals through collective effort and group savings.</p>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all min-h-[20rem]">
+                    <img src="./public/images/tangles.png" alt="Tangles" class="w-20 h-20 rounded-full mb-6 object-cover border-4 border-white shadow-sm" />
+                    <h3 class="font-nicoMoji text-2xl tracking-wider mb-4 text-gray-900">Tangles</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Tangle is a modern dating app built with Expo, designed to make connecting with others fun and effortless. With a sleek and intuitive user interface, Tangle offers a seamless experience for users to discover, match, and chat with potential partners</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TESTIMONIALS SECTION -->
+        <div id="testimonials" class="space-y-8 bg-zinc-200/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl w-full border border-gray-300 shadow-inner">
+            <p class="font-nicoMoji text-3xl md:text-4xl text-gray-900">Testimonials</p>
+            <div class="grid gap-8 grid-cols-1 md:grid-cols-3">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/90 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[18rem]">
+                    <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-600 mb-6 shadow-inner">D</div>
+                    <h3 class="font-nicoMoji text-xl tracking-wider mb-4 text-gray-900">Darlington Bright</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">"Robinson March exceeded our expectations with their innovative software solutions. Their professional approach and reliable service have been instrumental in our success."</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white/90 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[18rem]">
+                    <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-600 mb-6 shadow-inner">L</div>
+                    <h3 class="font-nicoMoji text-xl tracking-wider mb-4 text-gray-900">Laura White</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">"Robinson March's custom software development transformed our operations. Their capable team delivered a solution that not only met but exceeded our requirements."</p>
+                </div>
+                <!-- Testimonial 3 (Using Tangles asset per original code) -->
+                <div class="bg-white/90 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[18rem]">
+                    <img src="./public/images/tangles.png" alt="Tangles" class="w-16 h-16 rounded-full mb-6 object-cover shadow-sm" />
+                    <h3 class="font-nicoMoji text-xl tracking-wider mb-4 text-gray-900">Tangles User</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">"Tangle is a modern dating app built with Expo, designed to make connecting with others fun and effortless. With a sleek and intuitive user interface, Tangle offers a seamless experience."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BRIDGE SECTION (CTA) -->
+        <div class="w-full pt-16 pb-10 border-t border-gray-200 mt-20">
+            <div class="flex md:flex-row flex-col justify-between md:items-center items-start z-20 mb-12">
+                <div class="space-y-6 md:max-w-xl">
+                    <h3 class="text-3xl md:text-4xl font-medium font-nicoMoji leading-tight text-gray-900">Take a break and let us handle it...</h3>
+                    <button id="contact" class="bg-black text-white px-8 py-4 rounded-none hover:invert transition-all font-medium tracking-wide uppercase text-sm">Contact Robinson March Today</button>
+                </div>
+                <div class="w-full md:w-1/3 mt-12 md:mt-0">
+                    <img class="w-full rounded-2xl shadow-xl object-cover h-[300px]" 
+                         src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" alt="Advanced Technology" />
+                </div>
+            </div>
+            <p class="font-semibold leading-loose text-gray-700 text-lg md:text-xl max-w-4xl border-l-4 border-black pl-6 py-2">
+                At Robinson March, we believe in making your life easier. By partnering with us, you can focus on what you do best—running your business—while we take care of your digital needs. Our comprehensive solutions and dedicated support team ensure that you are always ahead of the curve. Discover the Robinson March difference. Contact us today to see how we can empower your business with innovative digital solutions.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center border-t border-gray-200 mt-20">
+        <p class="text-sm text-gray-500 font-light tracking-widest uppercase">&copy; 2026 Robinson March. All rights reserved.</p>
+    </footer>
+
+    <!-- Script to initialize Lucide icons & Mobile Menu -->
+    <script>
+        lucide.createIcons();
+        
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+</body>
+</html>
